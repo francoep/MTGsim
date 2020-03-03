@@ -126,4 +126,108 @@ class StdDeck:
 	def get_card_list(self):
 		return self.card_list
 
+###############################################################
+##Below Here is where the MTG simulation type things are done##
+###############################################################
+def card_parser(fname):
+	'''
+	Function to read in a text file that contains the information to make a card
+	'''
 
+	card_list=[]
+
+	with open(fname) as infile:
+		for line in infile:
+			name,amount,cost,cardtype,pt,abilities=line.rstrip().split(',')
+			for i in range(int(amount)):
+				card=Card(name,cost,cardtype,pt,abilities)
+				card_list.append(card)
+
+	return card_list
+
+class Card:
+	def __init__(self,name,cost,cardtype,pt,abilities):
+		self.name=name
+		self.cost=cost
+		self.cardtype=cardtype
+		self.pt=pt
+		self.abilities=abilities
+
+	def __str__(self):
+		return "Played %s" % (self.name)
+
+	def get_cost(self):
+		'''
+		Function to determine the manacost of the card
+		'''
+		return self.cost
+
+	def get_cardtype(self):
+		return self.cardtype
+
+	def get_pt(self):
+		return self.pt
+
+	def get_abilities(self):
+		return self.abilities
+
+	def get_name(self):
+		return self.name
+
+class Deck:
+	def __init__(self,fname=None):
+		if fname:
+			self.card_list=card_parser(fname) #TODO -- build parser
+			self.shuffle()
+
+		else:
+			self.card_list=[]
+
+	def shuffle(self):
+		'''
+		Function to shuffle the deck
+		'''
+		new_list=random.sample(self.card_list,len(self.card_list))
+		self.card_list=new_list
+
+	def __str__(self):
+		'''
+		Function to print the card names in a given zone.
+
+		TODO instead have it return a list of tuples of Name:State for the cards.
+		'''
+		if self.card_list:
+			for card in self.card_list:
+				print(card)
+			return ''
+		else:
+			return 'I am empty\n'
+
+	def add_and_shuf(self,card):
+		self.card_list.append(card)
+		self.shuffle()
+
+	def add(self,card):
+		'''
+		Functino to add a card to the current deck -- puts it on the bottom.
+		'''
+		self.card_list.append(card)
+
+	def draw(self):
+		'''
+		Function that pops the top card of the deck and returns it
+
+		**NOTE THIS FUNCTION REMOVES IT FROM CARD_LIST!!
+		'''
+
+		return self.card_list.pop()
+
+	def size(self):
+		'''
+		Function that returns the number of cards present in the Deck.
+		'''
+
+		return len(self.card_list)
+
+	def get_card_list(self):
+		return self.card_list

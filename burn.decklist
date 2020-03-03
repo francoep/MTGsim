@@ -1,0 +1,13 @@
+Goblin Guide,4,R,Creature,2/2,Haste
+Monastery Swiftspear,4,R,Creature,1/2,Haste Prowess
+Eidolon of the Great Revel,4,RR,Creature,2/2,Haste
+Lava Spike,4,R,Spell,,3damage
+Lightning Bolt,4,R,Spell,,3damage
+Rift bolt,4,2R/R,Spell,,suspend 3damage
+Boros Charm,4,WR,Spell,,4damage
+Lightning Helix,4,WR,Spell,,3damage
+Skewer the Critics,4,2R/R,Spell,,spectacke 3damage
+Skullcrack,4,1R,Spell,,3damage
+Fetch,12,,Land,,Fetch
+Mountain,4,R,Land,,Basic
+Sacred Foundry,4,W/R,Land,,Dual
