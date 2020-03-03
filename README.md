@@ -6,8 +6,10 @@ Language: Python3
 1) Use as simulations, given a decklist to calc probability 7 cards result in T2 Hogaak.
 
 # Sub Goals
-0) Get Classes working for a 2 player game of War.
 1) Implement Cards -- Support for Delve, Convoke, Colors, Abilities, Names, Types
 2) Implement Board + Graveyard + Library + Hand
 3) Implement standard game actions
 4) Speed Optimizations?
+
+# Completed Goals
+0) Get Classes working for a 2 player game of War.

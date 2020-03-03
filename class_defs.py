@@ -26,8 +26,6 @@ import random
 def std_card_parser(fname):
 	'''
 	Function to read in a text file that contains the information to make a card
-
-	TODO -- Make this work for Magic
 	'''
 
 	card_list=[]
@@ -127,3 +125,5 @@ class StdDeck:
 
 	def get_card_list(self):
 		return self.card_list
+
+
