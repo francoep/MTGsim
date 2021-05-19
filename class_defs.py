@@ -209,7 +209,7 @@ class Deck:
 
 	def add(self,card):
 		'''
-		Functino to add a card to the current deck -- puts it on the bottom.
+		Function to add a card to the current deck -- puts it on the bottom.
 		'''
 		self.card_list.append(card)
 
@@ -231,3 +231,13 @@ class Deck:
 
 	def get_card_list(self):
 		return self.card_list
+
+	#TODO: make a function to pop a fetchland
+	def get_card(self,cardname):
+		'''
+		This function pops a copy of cardname from the decklist & shuffles.
+
+		Returns -- The card corresponding to the name that was selected
+		'''
+
+		
